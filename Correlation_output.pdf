@@ -1,0 +1,217 @@
+ ================================================================================
+CORRELATION ANALYSIS - Mental Health Dataset
+================================================================================
+
+1. NUMERICAL FEATURES CORRELATIONS
+--------------------------------------------------------------------------------
+
+Numerical Features Correlation Matrix:
+                          age  stress_level  sleep_hours  \
+age                     1.000        -0.016        0.008   
+stress_level           -0.016         1.000       -0.003   
+sleep_hours             0.008        -0.003        1.000   
+physical_activity_days -0.004         0.000       -0.001   
+depression_score       -0.001        -0.002        0.005   
+anxiety_score           0.025         0.012       -0.004   
+social_support_score    0.011         0.020        0.003   
+productivity_score      0.002         0.007       -0.009   
+
+                        physical_activity_days  depression_score  \
+age                                     -0.004            -0.001   
+stress_level                             0.000            -0.002   
+sleep_hours                             -0.001             0.005   
+physical_activity_days                   1.000             0.009   
+depression_score                         0.009             1.000   
+anxiety_score                           -0.002             0.011   
+social_support_score                    -0.010             0.003   
+productivity_score                      -0.010            -0.939   
+
+                        anxiety_score  social_support_score  \
+age                             0.025                 0.011   
+stress_level                    0.012                 0.020   
+sleep_hours                    -0.004                 0.003   
+physical_activity_days         -0.002                -0.010   
+depression_score                0.011                 0.003   
+anxiety_score                   1.000                -0.018   
+social_support_score           -0.018                 1.000   
+productivity_score             -0.009                 0.001   
+
+                        productivity_score  
+age                                  0.002  
+stress_level                         0.007  
+sleep_hours                         -0.009  
+physical_activity_days              -0.010  
+depression_score                    -0.939  
+anxiety_score                       -0.009  
+social_support_score                 0.001  
+productivity_score                   1.000  
+
+2. CATEGORICAL FEATURES CORRELATIONS (Label Encoded)
+--------------------------------------------------------------------------------
+
+Categorical Features Correlation Matrix:
+                       gender  employment_status  work_environment  \
+gender                  1.000              0.011            -0.005   
+employment_status       0.011              1.000             0.009   
+work_environment       -0.005              0.009             1.000   
+mental_health_history  -0.013              0.008             0.002   
+seeks_treatment        -0.013             -0.010             0.004   
+
+                       mental_health_history  seeks_treatment  
+gender                                -0.013           -0.013  
+employment_status                      0.008           -0.010  
+work_environment                       0.002            0.004  
+mental_health_history                  1.000           -0.015  
+seeks_treatment                       -0.015            1.000  
+
+3. CORRELATION OF ALL X FEATURES WITH TARGET (mental_health_risk)
+--------------------------------------------------------------------------------
+
+Correlation with Target (mental_health_risk):
+productivity_score        0.355
+mental_health_history     0.014
+employment_status         0.011
+social_support_score      0.010
+sleep_hours               0.005
+stress_level              0.000
+work_environment         -0.004
+gender                   -0.006
+age                      -0.009
+physical_activity_days   -0.022
+seeks_treatment          -0.032
+anxiety_score            -0.246
+depression_score         -0.370
+dtype: float64
+
+4. COMBINED CORRELATION MATRIX (All Features + Target)
+--------------------------------------------------------------------------------
+
+Combined Correlation Matrix (Last row/column is target):
+                          age  stress_level  sleep_hours  \
+age                     1.000        -0.016        0.008   
+stress_level           -0.016         1.000       -0.003   
+sleep_hours             0.008        -0.003        1.000   
+physical_activity_days -0.004         0.000       -0.001   
+depression_score       -0.001        -0.002        0.005   
+anxiety_score           0.025         0.012       -0.004   
+social_support_score    0.011         0.020        0.003   
+productivity_score      0.002         0.007       -0.009   
+gender                  0.017        -0.005        0.008   
+employment_status      -0.011        -0.014        0.019   
+work_environment        0.008         0.004        0.008   
+mental_health_history   0.009        -0.008       -0.004   
+seeks_treatment         0.009        -0.009        0.002   
+mental_health_risk     -0.009         0.000        0.005   
+
+                        physical_activity_days  depression_score  \
+age                                     -0.004            -0.001   
+stress_level                             0.000            -0.002   
+sleep_hours                             -0.001             0.005   
+physical_activity_days                   1.000             0.009   
+depression_score                         0.009             1.000   
+anxiety_score                           -0.002             0.011   
+social_support_score                    -0.010             0.003   
+productivity_score                      -0.010            -0.939   
+gender                                   0.009            -0.006   
+employment_status                        0.001            -0.002   
+work_environment                         0.005             0.002   
+mental_health_history                    0.010            -0.006   
+seeks_treatment                         -0.007             0.002   
+mental_health_risk                      -0.022            -0.370   
+
+                        anxiety_score  social_support_score  \
+age                             0.025                 0.011   
+stress_level                    0.012                 0.020   
+sleep_hours                    -0.004                 0.003   
+physical_activity_days         -0.002                -0.010   
+depression_score                0.011                 0.003   
+anxiety_score                   1.000                -0.018   
+social_support_score           -0.018                 1.000   
+productivity_score             -0.009                 0.001   
+gender                          0.017                -0.010   
+employment_status               0.013                 0.001   
+work_environment                0.006                -0.004   
+mental_health_history          -0.014                 0.009   
+seeks_treatment                 0.011                -0.005   
+mental_health_risk             -0.246                 0.010   
+
+                        productivity_score  gender  employment_status  \
+age                                  0.002   0.017             -0.011   
+stress_level                         0.007  -0.005             -0.014   
+sleep_hours                         -0.009   0.008              0.019   
+physical_activity_days              -0.010   0.009              0.001   
+depression_score                    -0.939  -0.006             -0.002   
+anxiety_score                       -0.009   0.017              0.013   
+social_support_score                 0.001  -0.010              0.001   
+productivity_score                   1.000   0.008              0.000   
+gender                               0.008   1.000              0.011   
+employment_status                    0.000   0.011              1.000   
+work_environment                     0.003  -0.005              0.009   
+mental_health_history                0.004  -0.013              0.008   
+seeks_treatment                     -0.001  -0.013             -0.010   
+mental_health_risk                   0.355  -0.006              0.011   
+
+                        work_environment  mental_health_history  \
+age                                0.008                  0.009   
+stress_level                       0.004                 -0.008   
+sleep_hours                        0.008                 -0.004   
+physical_activity_days             0.005                  0.010   
+depression_score                   0.002                 -0.006   
+anxiety_score                      0.006                 -0.014   
+social_support_score              -0.004                  0.009   
+productivity_score                 0.003                  0.004   
+gender                            -0.005                 -0.013   
+employment_status                  0.009                  0.008   
+work_environment                   1.000                  0.002   
+mental_health_history              0.002                  1.000   
+seeks_treatment                    0.004                 -0.015   
+mental_health_risk                -0.004                  0.014   
+
+                        seeks_treatment  mental_health_risk  
+age                               0.009              -0.009  
+stress_level                     -0.009               0.000  
+sleep_hours                       0.002               0.005  
+physical_activity_days           -0.007              -0.022  
+depression_score                  0.002              -0.370  
+anxiety_score                     0.011              -0.246  
+social_support_score             -0.005               0.010  
+productivity_score               -0.001               0.355  
+gender                           -0.013              -0.006  
+employment_status                -0.010               0.011  
+work_environment                  0.004              -0.004  
+mental_health_history            -0.015               0.014  
+seeks_treatment                   1.000              -0.032  
+mental_health_risk               -0.032               1.000  
+
+5. KEY INSIGHTS
+--------------------------------------------------------------------------------
+
+Top 5 Features Most Correlated with Mental Health Risk (positive):
+  productivity_score            :   0.355
+  mental_health_history         :   0.014
+  employment_status             :   0.011
+  social_support_score          :   0.010
+  sleep_hours                   :   0.005
+
+Top 5 Features Most Correlated with Mental Health Risk (negative):
+  age                           :  -0.009
+  physical_activity_days        :  -0.022
+  seeks_treatment               :  -0.032
+  anxiety_score                 :  -0.246
+  depression_score              :  -0.370
+
+Strongest Correlations Between Features (excluding target):
+  depression_score          <-> productivity_score            :  -0.939
+  depression_score          <-> mental_health_risk            :  -0.370
+  productivity_score        <-> mental_health_risk            :   0.355
+  anxiety_score             <-> mental_health_risk            :  -0.246
+  seeks_treatment           <-> mental_health_risk            :  -0.032
+  age                       <-> anxiety_score                 :   0.025
+  physical_activity_days    <-> mental_health_risk            :  -0.022
+  stress_level              <-> social_support_score          :   0.020
+  sleep_hours               <-> employment_status             :   0.019
+  anxiety_score             <-> social_support_score          :  -0.018
+
+================================================================================
+Correlation Analysis Complete!
+================================================================================
